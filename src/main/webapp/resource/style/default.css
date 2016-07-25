@@ -1,0 +1,330 @@
+html,body {
+	height: 100%;
+}
+
+body {
+	background-color: lightgray;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: Monospace;
+	font-weight: bold;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+#window {
+	background: #9494B8 url("../image/stone.jpg") repeat;
+	width: 100%;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+	border: 0;
+	margin-left: auto;
+}
+
+div .loginArea {
+	color: black;
+	width: 140px;
+	height: 30px;
+	overflow: hidden;
+	background: url(../image/arrowDown.jpg) no-repeat right #ddd;
+	border: 1px solid #ccc;
+	width: 140px;
+}
+
+div .loginArea:hover {
+	border-style: inset;
+}
+
+div .loginArea select {
+	color: #444;
+	width: 168px;
+	font-size: 16px;
+	line-height: 1;
+	border: 1;
+	border-radius: 0;
+	height: 30px;
+	-webkit-appearance: none;
+	background: transparent;
+	border-radius: 0;
+	width: 168px;
+	width: 168px;
+}
+
+div .loginArea input {
+	color: black;
+	background-color: lightgray;
+	width: 140px;
+	height: 30px;
+	padding: 0;
+}
+
+#menu {
+	background: url("../image/iconMenu.png") no-repeat right center;
+	height: 40px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu ul,ul li {
+	display: block;
+}
+
+#menu ul {
+	border-bottom: 1px dotted black;
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu ul li {
+	float: left;
+	margin-right: 10px;
+}
+
+#menu ul a:link,#menu ul a:visited {
+	text-decoration: none;
+	display: block;
+	background-color: #ccc;
+	padding: 5px 10px;
+	border: 1px dotted white;
+	position: relative;
+	top: 1px;
+	color: black;
+	box-shadow: black 5px 5px 6px;
+	border-radius: 5px;
+}
+
+#menu ul a:hover {
+	background-color: white;
+}
+
+#contents {
+	clear: both;
+	background: #9494B8 url("../image/stoneLight.jpg") repeat;
+	width: 80%;
+	height: 100%;
+	padding-top: 5px;
+	padding-left: 30px;
+	border: 1px dotted #666666;
+	border-radius: 7px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 7px;
+}
+
+#footer {
+	background: #111111;
+	width: 100%;
+	height: 15px;
+	text-align: right;
+	color: white;
+	font: italic small-caps 10px Verdana, sans-serif;
+	bottom: 0;
+	position: absolute;
+	border: 0;
+}
+
+.notLoggedIn .my-logout-link {
+	display: none
+}
+
+.loggedIn .my-login-link {
+	display: none
+}
+
+form {
+	text-align: center;
+	color: black;
+	background-color: #C2C2AD;
+	width: 500px;
+	height: auto;
+	position: relative;
+	border: 1px dotted #262626;
+	border-radius: 7px;
+	margin: auto;
+}
+
+form:hover {
+	border: 1px double #262626;
+}
+
+form input:focus,button:focus {
+	background-color: #D1E0B2;
+}
+
+form textarea {
+	width: 400px;
+	height: 200px;
+	border: 1px solid #000000;
+	background-color: #CCCCCC;
+}
+
+form textarea.big {
+	width: 400px;
+	height: 350px;
+}
+
+form h1 {
+	color: black;
+	font-size: 14px;
+	padding: 5px 0 5px 5px;
+	border-bottom: 1px solid #161712;
+	border-top: 1px solid #161712;
+}
+
+form label {
+	text-align: center;
+	width: 100%;
+	height: 16px;
+	color: #333333;
+	display: block;
+	border: 1px dashed #666666;
+	border-radius: 7px;
+	padding: auto;
+	margin: 10px;
+}
+
+form span.title {
+	color: #333;
+	font: italic small-caps 14px Verdana, sans-serif;
+}
+
+form span.field {
+	color: #333;
+	font: italic small-caps 12px Verdana, sans-serif;
+}
+
+form .inputSimple {
+	margin: 10px;
+	color: black;
+	padding: 2px;
+	width: 200px;
+	height: 16px;
+	background: #CFCFCF;
+	border: 1px dotted #4C3C1B;
+	border-radius: 7px;
+	color: black;
+}
+
+form .button {
+	color: orange;
+	background-color: #2E2E1F;
+}
+
+form .button:hover {
+	color: yellow;
+	background-color: #2E2E1F;
+}
+
+.button {
+	margin-top: 5px;
+	-moz-box-shadow: inset 0px -1px 0px 0px #ffffff;
+	-webkit-box-shadow: inset 0px -1px 0px 0px #ffffff;
+	box-shadow: inset 0px -1px 0px 0px #ffffff;
+	background-color: #CCCCCC;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border: 1px solid #999966;
+	display: inline-block;
+	color: black;
+	font-family: arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 2px 33px;
+	text-decoration: none;
+}
+
+.button:hover {
+	background-color: #dcdcdc;
+	border-style: inset;
+	color: black;
+}
+
+.button:active {
+	position: relative;
+	top: 1px;
+}
+
+div.messageInfo {
+	color: gray;
+	padding-left: 20px;
+	width: 150px;
+	background: url("../image/iconInfo.gif") no-repeat left center;
+	color: gray;
+	width: 150px;
+}
+
+div.messageGood {
+	color: green;
+	padding-left: 20px;
+	width: 150px;
+	background: url("../image/iconGood.png") no-repeat left center;
+}
+
+div.messageBad {
+	color: red;
+	padding-left: 20px;
+	width: 150px;
+	background: url("../image/iconBad.gif") no-repeat left center;
+}
+
+div .list {
+	
+}
+
+div .list .element {
+	width: 40%;
+	height: 40px;
+	margin: auto;
+	margin-top: 5px; background : #aab;
+	border: 1px solid #888;
+	border-radius: 12px;
+	color: #333333;
+	height: 40px;
+	text-align: center;
+	border: 1px gray solid;
+	border-spacing: 1;
+	background: #aab
+}
+
+div .list .element th {
+	text-align: left;
+	border: 1px gray dashed;
+	border-spacing: 1;
+	border: 1px gray dashed;
+}
+
+div .list .element td {
+	text-align: left;
+	border: 1px #888 dashed;
+	border-spacing: 1;
+	text-align: left;
+}
+
+div .list .element tr.header {
+	height: 10px;
+}
+
+div .list .element:hover {
+	background-color: #bbc;
+	border-bottom-color: #fff;
+}
+
+div .preview {
+	width: 200px;
+	height: 200px;
+	border: 1px #333 dashed;
+	width: 200px;
+}

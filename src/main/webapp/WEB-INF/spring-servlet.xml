@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd
+     http://www.springframework.org/schema/mvc
+         http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- declares support for general annotations such as @Required, @Autowired -->
+	<context:annotation-config />
+	<!-- declares explicit support for annotation-driven MVC controllers (i.e. 
+		@RequestMapping, @Controller, although support for those is the default behaviour -->
+	<mvc:annotation-driven />
+	<!-- declares support for @Transactional annotation -->
+	<tx:annotation-driven />
+
+	<!-- Handles GET requests for /resources/** by efficiently serving static 
+		content in the ${webappRoot}/resources dir -->
+	<!-- nie wczytasz np plikow .css z zasobow -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:default-servlet-handler />
+
+	<context:component-scan base-package="project" />
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.tiles3.TilesView" />
+
+	</bean>
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- hibernate's sessionfactory bean -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSourceOracle">
+		<property name="packagesToScan" value="project.model" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="transactionTemplate"
+		class="org.springframework.transaction.support.TransactionTemplate">
+		<property name="transactionManager" ref="transactionManager" />
+	</bean>
+
+	<!-- When the Spring DispatcherServlet detects a multi-part request, it 
+		activates this resolver and hands over the request -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- one of the properties available; the maximum file size in bytes -->
+		<property name="maxUploadSize" value="1000000" />
+	</bean>
+
+</beans>

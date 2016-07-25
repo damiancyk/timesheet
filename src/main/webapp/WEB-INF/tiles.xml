@@ -1,0 +1,63 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="default" template="/jsp/tiles-layout-default/layout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+			value="/jsp/tiles-layout-default/header.jsp" />
+		<put-attribute name="menu" value="/jsp/tiles-layout-default/menu.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/jsp/tiles-layout-default/footer.jsp" />
+	</definition>
+
+	<definition name="index" extends="default">
+		<put-attribute name="title" value="Main page" />
+		<put-attribute name="body" value="/jsp/index.jsp" />
+	</definition>
+
+	<definition name="login/login" extends="default">
+		<put-attribute name="title" value="login page" />
+		<put-attribute name="body" value="/jsp/login/login.jsp" />
+	</definition>
+
+	<definition name="login/register" extends="default">
+		<put-attribute name="title" value="register page" />
+		<put-attribute name="body" value="/jsp/login/register.jsp" />
+	</definition>
+
+	<definition name="login/welcome" extends="default">
+		<put-attribute name="title" value="welcome page" />
+		<put-attribute name="body" value="/jsp/login/welcome.jsp" />
+	</definition>
+
+	<definition name="item/list" extends="default">
+		<put-attribute name="title" value="item list" />
+		<put-attribute name="body" value="/jsp/item/list.jsp" />
+	</definition>
+
+	<definition name="item/one" extends="default">
+		<put-attribute name="title" value="one item" />
+		<put-attribute name="body" value="/jsp/item/one.jsp" />
+	</definition>
+
+	<definition name="item/new" extends="default">
+		<put-attribute name="title" value="new item" />
+		<put-attribute name="body" value="/jsp/item/new.jsp" />
+	</definition>
+
+	<definition name="user/account" extends="default">
+		<put-attribute name="title" value="edit account" />
+		<put-attribute name="body" value="/jsp/user/account.jsp" />
+	</definition>
+
+	<definition name="user/addItem" extends="default">
+		<put-attribute name="title" value="add item" />
+		<put-attribute name="body" value="/jsp/user/addItem.jsp" />
+	</definition>
+
+	<definition name="admin/panel" extends="default">
+		<put-attribute name="title" value="admin panel" />
+		<put-attribute name="body" value="/jsp/admin/panel.jsp" />
+	</definition>
+
+</tiles-definitions>
